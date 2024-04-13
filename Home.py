@@ -82,7 +82,7 @@ if st.session_state['verified'] and st.session_state["authentication_status"]:
                 {"role": "user", "content": f"Translate the text below to the language {language}: \n INPUT: ```{input2}```"}
             ],
             temperature=0.0)
-            st.write(response)
+            #st.write(response)
             st.session_state['translation'] = response.choices[0].message.content
     
     st.write(st.session_state['translation'])
