@@ -73,7 +73,7 @@ if st.session_state['verified'] and st.session_state["authentication_status"]:
         if not st.session_state.get('subscribed'):
             st.error('Please subscribe to use this tool!')
             st.link_button('Subscribe', os.getenv('STRIPE_PAYMENT_URL'))
-            #webbrowser.open_new_tab()
+            webbrowser.open_new_tab(os.getenv('STRIPE_PAYMENT_URL'))
         else:
             response = client.chat.completions.create(
             model="gpt-3.5-turbo",
